@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    text-align: center;
+}
+
+#main {
+    width: 1024px;
+    height: 560px;
+    /* border: 1px solid black; */
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 32px;
+    margin-top: 20px;
+}
+
+.choice {
+    display: inline-block; 
+    border: 2px solid #3a76a3;
+    height: 40px;
+    line-height: 40px;
+    width: 170px;
+    margin-right: 20px;
+    text-align: center;
+    border-radius: 10px;
+    color: #3a76a3;
+}
+
+.choice:hover{
+    background-color: #f2f2f2;
+}
+
+.choice-list {
+    margin-top: 178px;
+}
+
+.help {
+    margin-top: 120px;
+}
+
+#help {
+    visibility: hidden;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 10px;
+    border: 2px solid #add9da;
+    border-radius: 10px;
+    background-color: #add9da;
+    color: black;
+}
+
+#btn {
+    height: 40px;
+    width: 170px;
+    border: 2px solid #b9e0ed;
+    border-radius: 10px;
+    background-color: #b9e0ed;
+    color: white;
+    margin-top: 15px;
+}
+
+.active-choice, .active-choice:hover {
+    background-color: #3a76a3;
+    color: white;
+}
+
+#btn.active-btn {
+    background-color: #70c5e2;
+    border: 2px solid #70c5e2;
+}
+
+#btn.active-btn:hover {
+    background-color: #39b6e2;
+    border: 2px solid #39b6e2;
+}
+
+#btn.correctly-btn, #btn.correctly-btn:hover {
+    background-color: #8fbe83;
+    border: 2px solid #8fbe83;
+}
+
+.complete-clear {
+    display: none;
+}
+
+#btn.error, #btn.error:hover, .error, .error:hover {
+    background-color: #f05a69;
+    border: 2px solid #f05a69;
+}
