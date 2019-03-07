@@ -7,7 +7,7 @@ window.onload = function() {
 
     let totalChoiceActive = 0;
 
-    let answers = {};
+    let answers = {answer1: false, answer2: false, answer3: false, answer4: false};
 
     for (let elem of choice) {
         elem.addEventListener('click', choiceFunc);
@@ -20,7 +20,7 @@ window.onload = function() {
         if (!~elem.classList.value.indexOf('active-choice')) {
             elem.classList.add('active-choice');
             btn.classList.add('active-btn');
-            btn.addEventListener('click', func);
+            btn.addEventListener('click', check);
             answers[elem.id] = true;
             ++totalChoiceActive;
         } else {
@@ -28,16 +28,16 @@ window.onload = function() {
             answers[elem.id] = false;
             if (!--totalChoiceActive) {
                 btn.classList.remove('active-btn');
-                btn.removeEventListener('click', func);
+                btn.removeEventListener('click', check);
             }
         }
     }
 
-    function func() {
+    function check() {
         if (answers.answer1 === true &&
             answers.answer3 === true &&
-            (!answers.answer4 || answers.answer4 === false) && 
-            (!answers.answer2 || answers.answer2 === false)) {
+            answers.answer4 === false && 
+            answers.answer2 === false) {
                     
             btn.classList.add('correctly-btn');
             removeAllListener();
@@ -72,7 +72,7 @@ window.onload = function() {
 
     function removeAllListener() {
         hiddenHelp();
-        btn.removeEventListener('click', func);
+        btn.removeEventListener('click', check);
         for (let elem of choice) {
             elem.removeEventListener('click', choiceFunc);
         }
@@ -81,7 +81,7 @@ window.onload = function() {
     function refresh() {
         changeHelp();
         totalChoiceActive = 0;
-        answers = {};
+        answers = {answer1: false, answer2: false, answer3: false, answer4: false};
         btn.classList.remove('error');
         btn.classList.remove('active-btn');
         for (let elem of choice) {
