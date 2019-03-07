@@ -61,6 +61,8 @@ h1 {
     background-color: #b9e0ed;
     color: white;
     margin-top: 15px;
+    display: inline-block;
+    line-height: 40px;
 }
 
 .active-choice, .active-choice:hover {
